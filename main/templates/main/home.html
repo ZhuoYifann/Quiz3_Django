@@ -1,0 +1,140 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dbeafe;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin-top: 8px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .title {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        th {
+            background-color: #2563eb;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 13px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eff6ff;
+        }
+
+        tr:hover {
+            background-color: #dbeafe;
+        }
+
+        .student-name {
+            font-weight: bold;
+            color: #1d4ed8;
+        }
+
+        .course {
+            background-color: #e0f2fe;
+            color: hsl(166, 96%, 32%);
+            padding: 6px 12px;
+            border-radius: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #555;
+            margin-top: 30px;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Student Management System</h1>
+        <p>Django Quiz #3</p>
+    </div>
+
+    <div class="container">
+
+        <h2 class="title">Student List</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Year Level</th>
+            </tr>
+
+            {% for student in students %}
+            <tr>
+                <td class="student-name">
+                    {{ student.name }}
+                </td>
+
+                <td>
+                    <span class="course">
+                        {{ student.course }}
+                    </span>
+                </td>
+
+                <td>
+                    Year {{ student.year_level }}
+                </td>
+            </tr>
+
+            {% empty %}
+            <tr>
+                <td colspan="3">
+                    No students found.
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div
+```
